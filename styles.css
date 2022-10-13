@@ -1,0 +1,47 @@
+:root{
+    --white-colour:#FAFAFA;
+    --super-white-colour:#FFFFFF;
+    --black-colour:#111111;
+    --gray-colour:#D9D9D9;
+    --primary-light-colour:#BEA1F7;
+    --primary-colour:#A175E5;
+    --primary-dark-colour:#4C1B7F;
+    --dark-gray-colour:#B5B5B5;
+    --greeting-text-colour:var(--black-colour);
+}
+
+body{
+    background: var(--white-colour);
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header4,h4{
+    font-weight: 500;
+    font-size: 24px;
+}
+
+#app-bar{
+    background:var(--super-white-colour);
+    display: flex;
+    justify-content: space-between;
+}
+
+#nav-container{
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+
+#nav-container>li>a{
+    padding: 1em;
+    text-decoration: none;
+    color:var(--black-colour);
+    display: block;
+}
+
+#nav-container>li:hover{
+    background:rgba(0, 0, 0, 0.1);
+}
+
