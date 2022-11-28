@@ -84,14 +84,15 @@ body,
   padding: 12px 24px;
   box-sizing: border-box;
   color: var(--white-color);
-  background: var(--primary-light-color);
   cursor: pointer;
   user-select: none;
   display: inline-block;
+  border: none;
 }
 
 .button {
   background: var(--primary-light-color);
+  transition: background-color 0.1s, color 0.1s, border-color 0.1s;
 }
 
 .button:hover {
@@ -116,6 +117,51 @@ body,
 .button.outlined:active {
   color: var(--primary-dark-color);
   border: 2px solid var(--primary-dark-color);
+}
+
+.button.outlined.gray {
+  border-color: var(--gray-color);
+  color: var(--gray-color);
+}
+
+.button.outlined.gray:hover {
+  color: var(--white-color);
+  background-color: var(--gray-color);
+}
+
+.button.outlined.gray:active {
+  background-color: var(--dark-gray-color);
+  border-color: var(--dark-gray-color);
+}
+
+input[type='text'],
+input[type='email'] {
+  border: none;
+  background-color: rgb(242, 242, 242);
+  color: rgba(0, 0, 0, 0.7);
+  outline: none;
+  box-sizing: border-box;
+  border-radius: 20px;
+  padding-inline: 15px;
+  height: 3rem;
+  font-size: 1.25rem;
+  border-block: rgb(242, 242, 242) 2px solid;
+  transition: border-color 0.1s;
+}
+
+input.filled-input {
+  border-bottom: var(--primary-color) 2px solid;
+
+}
+
+
+input[type='text']:focus,
+input[type='email']:focus {
+  border-bottom: var(--primary-dark-color) 2px solid;
+}
+
+input::placeholder {
+  color: rgba(0, 0, 0, 0.35)
 }
 
 #main {
@@ -634,4 +680,67 @@ body,
 
 .team-quality:nth-child(3) {
   background: linear-gradient(90deg, #f5af19, #f5a318, #f49718, #f48a17, #f47e16, #f37215, #f36515, #f25914, #f24d13, #f24012, #f13412, #f12711);
+}
+
+#contact-us-container {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+#mail-icon {
+  width: 128px;
+  height: 128px;
+}
+
+#email {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+#contact-us-text {
+  display: flex;
+  flex-flow: column;
+  line-height: 1;
+  gap: 8px;
+}
+
+#contact-us-text>h2 {
+  margin: 0;
+}
+
+#contact-form>h1 {
+  margin: 0;
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.contact-cards {
+  border-radius: 60px;
+  padding: 40px;
+}
+
+#contact-form-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#form-buttons {
+  margin-top: 4px;
+  display: flex;
+  gap: 8px;
+}
+
+#form-buttons :nth-child(1) {
+  width: fit-content;
+}
+
+#form-buttons :nth-child(2) {
+  width: 100%;
 }

@@ -111,3 +111,29 @@ function makeCardsHighlightable() {
 }
 
 makeCardsHighlightable()
+
+// Inputs highlighting
+function ensureEmptyInputHighLight() {
+  const inputs = document.querySelectorAll("input[type='text'], input[type='email']")
+  inputs.forEach(input => {
+    input.addEventListener('blur', () => {
+      checkInputs()
+    })
+  })
+}
+ensureEmptyInputHighLight()
+
+function checkInputs() {
+  const inputs = document.querySelectorAll("input[type='text'], input[type='email']")
+  inputs.forEach(input => {
+    if (input.value == '') {
+      input.classList.remove('filled-input')
+    } else {
+      input.classList.add('filled-input')
+    }
+  })
+}
+
+document.querySelector('#reset-button').addEventListener('click', () => {
+  setTimeout(checkInputs, 1)
+})

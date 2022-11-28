@@ -166,15 +166,24 @@
             </div>
         </div>
         <div id="contact-us-container">
-            <div id="email">
-                <img src="./static/envelope.png" alt="Envelope">
+            <div id="email" class="card contact-cards">
+                <img src="./static/envelope.png" alt="Envelope" id='mail-icon'>
                 <div id="contact-us-text">
                     <h2>Email</h2>
                     <span>info@procyon.ee</span>
                 </div>
             </div>
-            <div id="contact-form">
+            <div id="contact-form" class="card contact-cards">
                 <h1>Let's talk!</h1>
+                <form id="contact-form-form">
+                    <input type="text" name="name" id="input-name" placeholder="Name">
+                    <input type="email" name="email" id="input-email" placeholder="Email">
+                    <input type="text" name="subject" id="input-subject" placeholder="Subject">
+                    <div id="form-buttons">
+                        <input type="reset" value="Cancel" class="button outlined gray" id="reset-button">
+                        <input type="submit" value="Send" class="button">
+                    </div>
+                </form>
             </div>
         </div>
     </div>
