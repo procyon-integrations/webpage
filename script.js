@@ -79,13 +79,14 @@ function makeCardsHighlightable() {
           return
         }
       }
-      if (speed < 0) {
+      if (speed <= 0) {
         if (size <= 0) {
           elem.style.background = null
           currentAnimation = window.requestAnimationFrame(() => sizeChangeCB())
           return
         }
       }
+
       const sizeChange = targetSize * elapsed / duration * speed
       size = size + sizeChange
       if (size > targetSize) {
@@ -108,6 +109,7 @@ function makeCardsHighlightable() {
       speed = 1
     })
   })
+
 }
 
 makeCardsHighlightable()
@@ -137,3 +139,91 @@ function checkInputs() {
 document.querySelector('#reset-button').addEventListener('click', () => {
   setTimeout(checkInputs, 1)
 })
+
+
+// Animate entrance
+function animateEntranceServiceCards() {
+  const options = {
+    threshold: 0.75
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const shouldAddClass = entry.isIntersecting || entry.isVisible
+      if (shouldAddClass) {
+        switch (entry.target.id) {
+          case 'main-service':
+            entry.target.classList.add('animate__backInUp', 'visible');
+            break
+          case 'left-service':
+            entry.target.classList.add('animate__backInLeft', 'visible');
+            break
+          case 'right-service':
+            entry.target.classList.add('animate__backInRight', 'visible');
+            break
+        }
+      }
+    })
+  }, options)
+
+  const elemsToObserve = document.querySelectorAll('.service-card.animatable')
+  elemsToObserve.forEach(elem => {
+    observer.observe(elem)
+  })
+}
+
+animateEntranceServiceCards()
+
+// Animate entrance
+function animateDoubleSidedBlock() {
+  const options = {
+    threshold: 0.5,
+
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const shouldAddClass = entry.isIntersecting || entry.isVisible
+      if (shouldAddClass) {
+        if (entry.target.classList.contains('left')) {
+          entry.target.classList.add('animate__fadeInLeftBig');
+        } else {
+          entry.target.classList.add('animate__fadeInRightBig');
+        }
+      }
+    })
+  }, options)
+
+  const elemsToObserve = document.querySelectorAll('.double-sided-block > * ')
+  elemsToObserve.forEach(elem => {
+    observer.observe(elem)
+  })
+}
+
+animateDoubleSidedBlock()
+
+// Animate techstack entrance
+function animateStackCards() {
+  const options = {
+    threshold: 0.98,
+    margin: '10px'
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      console.log(entry)
+      const shouldAddClass = entry.isIntersecting || entry.isVisible
+      if (shouldAddClass) {
+        entry.target.classList.add('animate__zoomIn', 'visible');
+      }
+    })
+  }, options)
+
+  const elemsToObserve = document.querySelectorAll('.stack-item')
+  elemsToObserve.forEach(elem => {
+    observer.observe(elem)
+  })
+}
+
+animateStackCards()
+

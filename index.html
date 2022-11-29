@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <title>Document</title>
 </head>
 
@@ -46,7 +47,7 @@
         <div id="services">
             <h1>Services</h1>
             <div class="service-cards-container">
-                <div class="service-card card hoverable">
+                <div class="service-card card hoverable animatable animate__animated" id="left-service">
                     <img src="./static/intersect.png" class="service-icon">
                     <span class="service-card-text">
                         <h4>Business and System Analysis</h4>
@@ -55,10 +56,8 @@
                             help defining the most efficient solution for your business.
                         </p>
                     </span>
-                    <!-- <div class="hover-elem"></div> -->
-
                 </div>
-                <div class="service-card card hoverable" id="main-service">
+                <div class="service-card card hoverable animatable animate__animated" id="main-service">
                     <img src="./static/rocket.png" class="service-icon">
                     <span class="service-card-text">
                         <h4>End-to-End Development</h4>
@@ -67,9 +66,8 @@
                             the easiness of a single contract relationship with a full-stack software developers team.
                         </p>
                     </span>
-                    <!-- <div class="hover-elem"></div> -->
                 </div>
-                <div class="service-card card hoverable">
+                <div class="service-card card hoverable animatable animate__animated" id="right-service">
                     <img src="./static/iterative.png" class="service-icon">
                     <span class="service-card-text">
                         <h4>Continuous Services</h4>
@@ -79,56 +77,56 @@
                             apps are doing what they should, as long as needed.
                         </p>
                     </span>
-                    <!-- <div class="hover-elem"></div> -->
                 </div>
             </div>
         </div>
         <div id="prototyping-container" class="double-sided-block-container">
             <div id="prototyping" class="double-sided-block">
-                <div class="img-text">
+                <div class="img-text animate__animated left">
                     <h1>Prototyping</h1>
                     <p>We understand the importance of startups entering the market as quickly as possible. With startup
                         nature in our DNA, we can easily accommodate the peculiar needs of startups in the development
                         of
                         prototypes or proof of concept.</p>
                 </div>
-                <div class="card no-shadow img-container"><img src="./static/Journey-amico.png" alt="Startup doodle"
-                        id="journey-img" class="amico"></div>
+                <div class="card no-shadow img-container animate__animated right"><img src="./static/Journey-amico.png"
+                        alt="Startup doodle" id="journey-img" class="amico"></div>
             </div>
         </div>
         <div id="techstack-container">
             <div id="techstack">
                 <h1>Tech Stack</h1>
                 <div id="stack-items-container">
-                    <div class="stack-item hoverable small card">
+                    <div class="stack-item animate__animated hoverable small card">
                         <h3 class="stack-title ">Single Page Application</h3>
                         <img class="techstack-icon" src="./static/stack-icons/web-design.png" alt="">
                     </div>
-                    <div class="stack-item hoverable small card">
+                    <div class="stack-item animate__animated hoverable small card">
                         <h3 class="stack-title">Database</h3>
                         <img class="techstack-icon" src="./static/stack-icons/database.png" alt="">
                     </div>
-                    <div class="stack-item hoverable small card">
+                    <div class="stack-item animate__animated hoverable small card">
                         <h3 class="stack-title">Mobile Apps</h3>
                         <img class="techstack-icon" src="./static/stack-icons/app-development.png" alt="">
                     </div>
-                    <div class="stack-item hoverable small card">
+                    <div class="stack-item animate__animated hoverable small card">
                         <h3 class="stack-title">Maps</h3>
                         <img class="techstack-icon" src="./static/stack-icons/destination.png" alt="">
                     </div>
-                    <div class="stack-item hoverable small card">
+                    <div class="stack-item animate__animated hoverable small card">
                         <h3 class="stack-title">Serverless</h3>
                         <img class="techstack-icon" src="./static/stack-icons/cloud.png" alt="">
                     </div>
-                    <div class="stack-item hoverable small card">
+                    <div class="stack-item animate__animated hoverable small card">
                         <h3 class="stack-title">Could Native</h3>
                         <img class="techstack-icon" src="./static/stack-icons/cloud (2).png" alt="">
                     </div>
-                    <div class="stack-item hoverable small card">
+                    <div class="stack-item animate__animated hoverable small card">
                         <h3 class="stack-title">Cross Platform</h3>
                         <img class="techstack-icon" src="./static/stack-icons/smart-tv.png" alt="">
                     </div>
-                    <div class="stack-item hoverable small card white-ball" id="contact-us-stack-block">
+                    <div class="stack-item animate__animated hoverable small card white-ball"
+                        id="contact-us-stack-block">
                         <a href="#contact-us" id="contact-us-button" class="button">Contact Us</a>
                         <h3 class="stack-title" id="something-missing">Something Missing?</h3>
                     </div>
