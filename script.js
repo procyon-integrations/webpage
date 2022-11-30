@@ -194,7 +194,7 @@ function animateDoubleSidedBlock() {
     })
   }, options)
 
-  const elemsToObserve = document.querySelectorAll('.double-sided-block > * ')
+  const elemsToObserve = document.querySelectorAll('#prototyping > * ')
   elemsToObserve.forEach(elem => {
     observer.observe(elem)
   })
@@ -226,4 +226,28 @@ function animateStackCards() {
 }
 
 animateStackCards()
+
+// Animate tags enter
+function animateTagsEnter() {
+  const options = {
+    margin: "100px 0"
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      console.log(entry)
+      const shouldAddClass = entry.isIntersecting
+      if (shouldAddClass) {
+        entry.target.classList.add('animate__zoomIn');
+      }
+    })
+  }, options)
+
+  const elemsToObserve = document.querySelectorAll('.team-quality')
+  elemsToObserve.forEach(elem => {
+    observer.observe(elem)
+  })
+}
+
+animateTagsEnter()
 

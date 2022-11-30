@@ -524,6 +524,10 @@ input::placeholder {
   box-sizing: border-box;
 }
 
+#prototyping>* {
+  opacity: 0;
+}
+
 @media screen and (max-width: 900px) {
   .double-sided-block {
     grid-template-columns: 1fr;
@@ -706,7 +710,9 @@ input::placeholder {
   letter-spacing: -0.01em;
   text-transform: uppercase;
   padding: 12px 24px;
-  color: var(--super-white-color)
+  color: var(--super-white-color);
+  opacity: 1;
+  animation-delay: 0.5s;
 }
 
 .team-quality:nth-child(1) {
@@ -783,3 +789,4 @@ input::placeholder {
 #form-buttons :nth-child(2) {
   width: 100%;
 }
+
