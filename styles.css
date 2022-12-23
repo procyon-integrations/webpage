@@ -23,7 +23,6 @@
     animation: none !important;
   }
 
-
 }
 
 
@@ -38,7 +37,8 @@ h1,
   font-style: normal;
   font-weight: 700;
   font-size: 3rem;
-  line-height: 3.625rem;
+  line-height: 1.2;
+  margin-block: 2.5rem;
 }
 
 h2,
@@ -184,7 +184,7 @@ input::placeholder {
   display: flex;
   align-items: center;
   flex-direction: column;
-
+  gap: 10rem;
 }
 
 #background {
@@ -192,9 +192,12 @@ input::placeholder {
   top: 0;
   bottom: 0;
   width: 100%;
-  height: 100vh;
+  max-width: 100vw;
   z-index: 0;
   overflow: hidden;
+  display: flex;
+  flex-flow: column;
+  height: fit-content;
 }
 
 .body2 {
@@ -453,7 +456,7 @@ input::placeholder {
 
 .card.img-container {
   width: 100%;
-  padding: 10px;
+  padding: 20px;
 }
 
 .card.hoverable {
@@ -507,7 +510,7 @@ input::placeholder {
 
 #journey-img {
   transform: scaleX(-1);
-  max-width: 675px;
+  max-width: 600px;
   min-width: 300px;
   width: 100%
 }
@@ -515,8 +518,8 @@ input::placeholder {
 .double-sided-block {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  max-width: 1370px;
-  column-gap: 20px;
+  max-width: 1240px;
+  column-gap: 40px;
   justify-content: center;
   align-items: center;
   justify-items: center;
@@ -526,6 +529,7 @@ input::placeholder {
 
 #prototyping>* {
   opacity: 0;
+  color: var(--white-color)
 }
 
 @media screen and (max-width: 900px) {
@@ -596,6 +600,7 @@ input::placeholder {
 
 #techstack>h1 {
   text-align: center;
+  color: var(--white-color);
 }
 
 .card.stack-item {
@@ -790,3 +795,51 @@ input::placeholder {
   width: 100%;
 }
 
+#mid-circle-frame {
+  display: grid;
+  justify-content: center;
+  width: 100vw;
+  margin-top: calc(17rem + 250px);
+}
+
+#mid-circles-wrapper {
+  width: 133vw;
+  height: 133vw;
+  min-height: 2000px;
+  max-height: 180vh;
+  border-radius: 9999px;
+  position: relative;
+  filter: blur(100px);
+}
+
+#mid-circle-container {
+  width: 133vw;
+  height: 133vw;
+  min-height: 2000px;
+  max-height: 180vh;
+  overflow: hidden;
+  border-radius: 999999px;
+  filter: blur(100px);
+}
+
+.mid-circle {
+  width: 133vw;
+  height: 133vw;
+  min-height: 2000px;
+  max-height: 180vh;
+  border-radius: 99999px;
+  position: absolute;
+}
+
+#mid-circle3 {
+  background: radial-gradient(78.34% 78.34% at 14.19% 34.59%, rgba(20, 0, 255, 0.6) 0%, rgba(0, 178, 255, 0.35) 53.65%, rgba(0, 240, 255, 0) 100%)
+}
+
+#mid-circle2 {
+  opacity: 0.5;
+  background: conic-gradient(from 180deg at 50% 50%, #FF00B8 -50.63deg, #6A8BFF 50.63deg, #7A47FF 138.75deg, #CE23FF 243.75deg, #FF00B8 309.38deg, #6A8BFF 410.62deg);
+}
+
+#mid-circle1 {
+  background: linear-gradient(305.3deg, #FF3F61 15.31%, rgba(255, 0, 46, 0.67) 54.49%, rgba(255, 139, 139, 0) 101.77%);
+}

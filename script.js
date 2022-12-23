@@ -211,7 +211,6 @@ function animateStackCards() {
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      console.log(entry)
       const shouldAddClass = entry.isIntersecting || entry.isVisible
       if (shouldAddClass) {
         entry.target.classList.add('animate__zoomIn', 'visible');
@@ -235,7 +234,6 @@ function animateTagsEnter() {
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      console.log(entry)
       const shouldAddClass = entry.isIntersecting
       if (shouldAddClass) {
         entry.target.classList.add('animate__zoomIn');
