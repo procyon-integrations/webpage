@@ -419,7 +419,6 @@ input::placeholder {
   grid-template-columns: 1fr;
   grid-template-rows: auto auto;
   place-items: center;
-  width: 100%;
   box-sizing: content-box;
   padding-bottom: 1em;
 }
@@ -455,7 +454,6 @@ input::placeholder {
 }
 
 .card.img-container {
-  width: 100%;
   padding: 20px;
 }
 
@@ -510,6 +508,9 @@ input::placeholder {
 
 #journey-img {
   transform: scaleX(-1);
+}
+
+.amico {
   max-width: 600px;
   min-width: 300px;
   width: 100%
@@ -545,7 +546,7 @@ input::placeholder {
 }
 
 .img-text {
-  max-width: 675px;
+  max-width: 600px;
   min-width: 300px;
   width: 100%;
   text-align: center;
@@ -689,12 +690,6 @@ input::placeholder {
 
 #something-missing {
   color: var(--white-color);
-}
-
-#team-image {
-  max-width: 675px;
-  min-width: 300px;
-  width: 100%
 }
 
 #team-qualities {
