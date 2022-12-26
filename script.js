@@ -249,3 +249,19 @@ function animateTagsEnter() {
 
 animateTagsEnter()
 
+const wavePaths = document.querySelectorAll("#waves > path")
+const wavePathArr = Array.prototype.slice.call(wavePaths).reverse()
+const startScale = 1.1
+const scaleDif = 0.9
+document.querySelector("body").addEventListener('mousemove', event => {
+  const maxWidth = document.querySelector("#waves").getBoundingClientRect().width
+  wavePathArr.forEach((pathElem, index, list) => {
+    const x = event.clientX
+    if (x > maxWidth) {
+      return
+    }
+    // Trying to solve float numbers precission issue
+    const moveFactor = Math.round(((startScale - 1 + (scaleDif / (list.length - 1)) * index)) * 10000) / 10000
+    pathElem.style.transform = "translateX(" + (-event.clientX * moveFactor / 2 * (900 / maxWidth)) + "px)"
+  })
+})
