@@ -834,6 +834,7 @@ input::placeholder {
   justify-content: center;
   width: 100vw;
   margin-top: calc(17rem + 250px);
+  margin-bottom: 300px;
 }
 
 #mid-circles-wrapper {
