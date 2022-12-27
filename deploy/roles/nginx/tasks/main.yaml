@@ -1,0 +1,24 @@
+- name: Install nginx
+  apt:
+    name:
+      - nginx
+  notify: Run Nginx
+
+- name: Upload nginx config
+  template:
+    src: default.j2
+    dest: '/etc/nginx/sites-enabled/{{ website }}'
+    force: no
+  notify: Restart Nginx
+
+- name: Run Nginx
+  service:
+    name: nginx
+    state: started
+    enabled: yes
+
+- name: Install Certbot
+  apt:
+    name:
+      - certbot
+      - python3-certbot-nginx

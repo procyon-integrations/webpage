@@ -1,0 +1,8 @@
+{% for host in resto_vms.results %}
+{{ host.data.droplet.name }} ansible_host={{ (host.data.droplet.networks.v4 | selectattr('type', 'equalto', 'public')).0.ip_address | default('<none>', true) }} ansible_user=root
+{% endfor %}
+
+[remote_hosts]
+{% for host in resto_vms.results %}
+{{ host.data.droplet.name }}
+{% endfor %}

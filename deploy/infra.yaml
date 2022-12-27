@@ -1,0 +1,44 @@
+- name: Create droplets
+  hosts: localhost
+  gather_facts: no
+  roles:
+    - do_servers
+  tags:
+    - DO
+    - never
+
+- name: Gather facts
+  gather_facts: yes
+  become: yes
+  hosts:
+    - remote_hosts
+  tags:
+    - facts
+    - always
+
+- name: Update remote hosts
+  gather_facts: no
+  become: yes
+  hosts:
+    - remote_hosts
+  roles:
+    - remote_hosts
+
+- name: Upload src
+  gather_facts: no
+  become: yes
+  hosts:
+    - website
+  roles:
+    - website
+
+- name: Nginx and uwsgi
+  gather_facts: no
+  become: yes
+  hosts:
+    - website
+  roles:
+    - uwsgi
+    - nginx
+  tags:
+    - uwsgi

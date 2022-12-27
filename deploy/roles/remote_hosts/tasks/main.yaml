@@ -1,0 +1,8 @@
+- name: Update and upgrade apt packages
+  apt:
+    update_cache: yes
+    cache_valid_time: 86400
+
+- name: Update CA certificates
+  ansible.builtin.apt:
+    name: ca-certificates>=20211000*

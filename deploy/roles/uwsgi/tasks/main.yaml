@@ -1,0 +1,21 @@
+- name: Install uwsgi
+  apt:
+    name:
+      - uwsgi
+
+- name: Install app dependencies
+  ansible.builtin.apt:
+    name:
+      - uwsgi-plugin-python3
+
+- name: Upload config
+  template:
+    src: app.ini.j2
+    dest: /etc/uwsgi/apps-enabled/website.ini
+  notify: Restart uwsgi
+
+- name: Enable uwsgi
+  service:
+    name: uwsgi
+    state: started
+    enabled: yes
