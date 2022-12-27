@@ -1,0 +1,31 @@
+- name: Add python repo
+  ansible.builtin.apt_repository:
+    repo: 'ppa:deadsnakes/ppa'
+
+- name: Prepare app.py
+  template:
+    src: app.py.j2
+    dest: ../src/app.py
+  delegate_to: localhost
+  become: no
+
+- name: Move source files to server
+  copy:
+    src: ../src/
+    dest: "{{ app_path }}"
+  notify: Restart uwsgi
+
+- name: Move requirements
+  copy:
+    src: ../requirements.txt
+    dest: "{{ app_path }}"
+
+- name: Install pip
+  apt:
+    name:
+      - python3-pip
+
+- name: Sync requirements
+  pip:
+    requirements: '{{ app_path }}/requirements.txt'
+  notify: Restart uwsgi

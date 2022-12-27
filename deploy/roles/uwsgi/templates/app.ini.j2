@@ -1,0 +1,7 @@
+[uwsgi]
+chdir = {{ app_path }}
+module = wsgi:app
+plugins = python3
+socket = localhost:5000
+vacuum = true
+die-on-term = true

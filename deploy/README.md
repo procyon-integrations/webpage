@@ -1,0 +1,1 @@
+Certbot should be launched manually (no good automatization for that, or I was lazy enough to write it)

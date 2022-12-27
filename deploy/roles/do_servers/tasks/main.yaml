@@ -1,0 +1,22 @@
+- name: Create machines
+  digital_ocean_droplet:
+    project: argos
+    state: active
+    unique_name: yes
+    oauth_token: "{{ do_token }}"
+    name: "{{ item }}"
+    size: s-1vcpu-1gb
+    region: fra1
+    image: ubuntu-20-04-x64
+    ssh_keys: "{{ ssh_keys }}"
+  register: resto_vms
+  with_items: "{{ do_servers }}"
+
+- name: Create hosts file
+  template:
+    src: hosts.j2
+    dest: ./hosts
+
+- name: Refresh host lists
+  meta: refresh_inventory
+
