@@ -1,5 +1,6 @@
 [uwsgi]
 chdir = {{ app_path }}
+env = MAILER_PASS={{ mailer_pass }}
 module = wsgi:app
 plugins = python3
 socket = localhost:5000

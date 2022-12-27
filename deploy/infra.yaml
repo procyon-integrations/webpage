@@ -32,13 +32,22 @@
   roles:
     - website
 
-- name: Nginx and uwsgi
+- name: Uwsgi
   gather_facts: no
   become: yes
   hosts:
     - website
   roles:
     - uwsgi
-    - nginx
   tags:
     - uwsgi
+
+- name: Nginx
+  gather_facts: no
+  become: yes
+  hosts:
+    - website
+  roles:
+    - nginx
+  tags:
+    - nginx

@@ -2,7 +2,7 @@ from flask import Flask, request, render_template
 from flask_mail import Mail
 import json
 import html
-
+import os
 app = Flask(__name__, static_folder='static')
 
 app.config.update(
@@ -10,7 +10,7 @@ app.config.update(
     MAIL_PORT=465,
     MAIL_USE_SSL=True,
     MAIL_USERNAME='noreply@procyon.ee',
-    MAIL_PASSWORD='{{ mailer_pass }}'
+    MAIL_PASSWORD=os.environ['MAILER_PASS']
 )
 
 mail = Mail(app)
