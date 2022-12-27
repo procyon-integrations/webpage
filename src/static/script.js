@@ -112,7 +112,7 @@ function makeCardsHighlightable() {
 
 }
 
-makeCardsHighlightable()
+//makeCardsHighlightable()
 
 // Inputs highlighting
 function ensureEmptyInputHighLight() {
