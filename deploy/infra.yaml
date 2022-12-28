@@ -31,6 +31,8 @@
     - website
   roles:
     - website
+  handlers:
+    - import_tasks: roles/uwsgi/handlers/main.yaml
 
 - name: Uwsgi
   gather_facts: no
