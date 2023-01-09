@@ -4,7 +4,7 @@ const MAX_HOVERABLE_SIZE = 200
 const MAX_SMALL_HOVERABLE_SIZE = 120
 // main text animation
 anime({
-  targets: "#animated-products > span",
+  targets: "#animated-products",
   duration: 8000,
   easing: "easeInOutQuint",
   loop: true,
@@ -112,7 +112,7 @@ function makeCardsHighlightable() {
 
 }
 
-//makeCardsHighlightable()
+makeCardsHighlightable()
 
 // Inputs highlighting
 function ensureEmptyInputHighLight() {
