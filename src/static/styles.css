@@ -411,7 +411,7 @@ input::placeholder {
 .bg-circle {
   height: 97vh;
   width: 97vh;
-  border-radius: 1000vh;
+  /* border-radius: 1000vh; */
   min-height: 500px;
   min-width: 500px;
   filter: blur(60px);
@@ -428,20 +428,20 @@ input::placeholder {
 }
 
 #left-circle {
-  background: conic-gradient(from 180deg at 50% 50%,
+  /* background: conic-gradient(from 180deg at 50% 50%,
       #f9ddd7 -70.22deg,
       #f96ca4 51.88deg,
       #f3ea85 181.36deg,
       #f9ddd7 289.78deg,
-      #f96ca4 411.88deg);
+      #f96ca4 411.88deg); */
   animation: circleanimation 5.1s linear infinite;
 }
 
 #right-circle {
-  background: conic-gradient(from 180deg at 50% 50%,
+  /* background: conic-gradient(from 180deg at 50% 50%,
       #9cc8fd 0deg,
       #f35be7 180deg,
-      #9cc8fd 360deg);
+      #9cc8fd 360deg); */
   animation: circleanimation 4.9s reverse linear infinite;
 }
 
@@ -879,17 +879,4 @@ input::placeholder {
   max-height: 180vh;
   border-radius: 99999px;
   position: absolute;
-}
-
-#mid-circle3 {
-  background: radial-gradient(78.34% 78.34% at 14.19% 34.59%, rgba(20, 0, 255, 0.6) 0%, rgba(0, 178, 255, 0.35) 53.65%, rgba(0, 240, 255, 0) 100%)
-}
-
-#mid-circle2 {
-  opacity: 0.5;
-  background: conic-gradient(from 180deg at 50% 50%, #FF00B8 -50.63deg, #6A8BFF 50.63deg, #7A47FF 138.75deg, #CE23FF 243.75deg, #FF00B8 309.38deg, #6A8BFF 410.62deg);
-}
-
-#mid-circle1 {
-  background: linear-gradient(305.3deg, #FF3F61 15.31%, rgba(255, 0, 46, 0.67) 54.49%, rgba(255, 139, 139, 0) 101.77%);
 }

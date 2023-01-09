@@ -1,11 +1,11 @@
 from flask import Flask, request, render_template
 from flask_mail import Mail
-from dotenv import load_dotenv
+from environs import Env
 import json
 import html
 import os
 
-load_dotenv(".env")
+Env().read_env()
 
 app = Flask(__name__, static_folder='static')
 
