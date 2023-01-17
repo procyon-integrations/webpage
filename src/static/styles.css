@@ -398,6 +398,8 @@ input::placeholder {
   place-items: center;
   overflow: hidden;
   filter: blur(60px);
+  transform: translate3d(0, 0, 0);
+
 }
 
 .circle-container.left {
@@ -415,6 +417,8 @@ input::placeholder {
   min-height: 500px;
   min-width: 500px;
   filter: blur(60px);
+  transform: translate3d(0, 0, 0);
+
 }
 
 @keyframes circleanimation {
@@ -860,6 +864,8 @@ input::placeholder {
   border-radius: 9999px;
   position: relative;
   filter: blur(100px);
+  transform: translate3d(0, 0, 0);
+
 }
 
 #mid-circle-container {
@@ -870,6 +876,8 @@ input::placeholder {
   overflow: hidden;
   border-radius: 999999px;
   filter: blur(100px);
+  transform: translate3d(0, 0, 0);
+
 }
 
 .mid-circle {
