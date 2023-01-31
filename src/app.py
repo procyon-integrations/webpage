@@ -1,8 +1,12 @@
 from flask import Flask, request, render_template
 from flask_mail import Mail
+from environs import Env
 import json
 import html
 import os
+
+Env().read_env()
+
 app = Flask(__name__, static_folder='static')
 
 app.config.update(
@@ -42,7 +46,3 @@ def mailer():
 
 if __name__ == '__main__':
     app.run()
-
-
-
-

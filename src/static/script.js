@@ -4,7 +4,7 @@ const MAX_HOVERABLE_SIZE = 200
 const MAX_SMALL_HOVERABLE_SIZE = 120
 // main text animation
 anime({
-  targets: "#animated-products > span",
+  targets: "#animated-products",
   duration: 8000,
   easing: "easeInOutQuint",
   loop: true,
@@ -249,19 +249,39 @@ function animateTagsEnter() {
 
 animateTagsEnter()
 
+// Waves
+
 const wavePaths = document.querySelectorAll("#waves > path")
 const wavePathArr = Array.prototype.slice.call(wavePaths).reverse()
 const startScale = 1.1
 const scaleDif = 0.9
-document.querySelector("body").addEventListener('mousemove', event => {
+
+
+function startWaveUpdate() {
+  let x = -1
   const maxWidth = document.querySelector("#waves").getBoundingClientRect().width
-  wavePathArr.forEach((pathElem, index, list) => {
-    const x = event.clientX
+  const wavePaths = document.querySelectorAll("#waves > path")
+  const wavePathArr = Array.prototype.slice.call(wavePaths).reverse()
+  const startScale = 1.1
+  const scaleDif = 0.9
+  document.querySelector("body").addEventListener('mousemove', event => {
+    x = event.clientX
+  })
+
+  function updateWavePosition() {
     if (x > maxWidth) {
+      window.requestAnimationFrame(updateWavePosition)
       return
     }
-    // Trying to solve float numbers precission issue
-    const moveFactor = Math.round(((startScale - 1 + (scaleDif / (list.length - 1)) * index)) * 10000) / 10000
-    pathElem.style.transform = "translateX(" + (-event.clientX * moveFactor / 2 * (900 / maxWidth)) + "px)"
-  })
-})
+    wavePathArr.forEach((pathElem, index, list) => {
+      // To solve floating point precision issue the move factor being rounded
+      const moveFactor = Math.round(((startScale - 1 + (scaleDif / (list.length - 1)) * index)) * 10000) / 10000
+      pathElem.style.transform = "translateX(" + (-x * moveFactor / 2 * (900 / maxWidth)) + "px)"
+    })
+    window.requestAnimationFrame(updateWavePosition)
+  }
+  updateWavePosition()
+}
+
+startWaveUpdate()
+
