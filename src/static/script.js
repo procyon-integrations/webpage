@@ -1,4 +1,4 @@
-const lineHeight = 3.625;
+const lineHeight = 4;
 const lineHeightUnits = 'rem';
 const MAX_HOVERABLE_SIZE = 200
 const MAX_SMALL_HOVERABLE_SIZE = 120
@@ -46,11 +46,14 @@ function identifyParamsOfTheGradient(elem) {
   }
 
   let ballColor, backgroundColor
+  const initial_background_color = window.getComputedStyle(elem , null).getPropertyValue('background-color');
+  backgroundColor = initial_background_color
   if (elem.classList.contains("white-ball")) {
     ballColor = "var(--super-white-color)"
-    backgroundColor = "var(--primary-color)"
-  } else {
-    backgroundColor = "var(--super-white-color)"
+  } else if (elem.classList.contains("color-from-h3")) {
+    ballColor = window.getComputedStyle(elem.querySelector("h3"), null).getPropertyValue('color');
+
+   }else{
     ballColor = "var(--primary-color)"
   }
   return [targetSize, ballColor, backgroundColor]
@@ -92,7 +95,7 @@ function makeCardsHighlightable() {
       if (size > targetSize) {
         size = targetSize
       }
-      elem.style.background = `radial-gradient(circle at ${x}px ${y}px,  ${ballColor} 0%, ${backgroundColor} calc(0% + ${size}px))`;
+      elem.style.background = `radial-gradient(circle at ${x}px ${y}px,  ${ballColor} 0%, ${backgroundColor} calc(0% + ${size}px)) no-repeat`;
       currentAnimation = window.requestAnimationFrame(() => sizeChangeCB())
     }
     sizeChangeCB()
@@ -104,7 +107,7 @@ function makeCardsHighlightable() {
       const [offsetX, offsetY] = getOffsetToHoverCard(event.target)
       x = offsetX + parseInt(event.offsetX)
       y = offsetY + parseInt(event.offsetY)
-      elem.style.background = `radial-gradient(circle at ${x}px ${y}px, ${ballColor} 0%, ${backgroundColor} calc(0% + ${size}px))`;
+      elem.style.background = `radial-gradient(circle at ${x}px ${y}px, ${ballColor} 0%, ${backgroundColor} calc(0% + ${size}px)) no-repeat`;
 
       speed = 1
     })
@@ -172,7 +175,7 @@ function animateEntranceServiceCards() {
   })
 }
 
-animateEntranceServiceCards()
+//animateEntranceServiceCards()
 
 // Animate entrance
 function animateDoubleSidedBlock() {
@@ -200,7 +203,7 @@ function animateDoubleSidedBlock() {
   })
 }
 
-animateDoubleSidedBlock()
+//animateDoubleSidedBlock()
 
 // Animate techstack entrance
 function animateStackCards() {
@@ -224,7 +227,7 @@ function animateStackCards() {
   })
 }
 
-animateStackCards()
+//animateStackCards()
 
 // Animate tags enter
 function animateTagsEnter() {
@@ -247,7 +250,7 @@ function animateTagsEnter() {
   })
 }
 
-animateTagsEnter()
+//animateTagsEnter()
 
 // Waves
 
@@ -283,5 +286,5 @@ function startWaveUpdate() {
   updateWavePosition()
 }
 
-startWaveUpdate()
+//startWaveUpdate()
 
